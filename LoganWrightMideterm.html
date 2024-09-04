@@ -1,0 +1,792 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.2.280">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>loganwrightmideterm</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<script src="LoganWrightMideterm_files/libs/clipboard/clipboard.min.js"></script>
+<script src="LoganWrightMideterm_files/libs/quarto-html/quarto.js"></script>
+<script src="LoganWrightMideterm_files/libs/quarto-html/popper.min.js"></script>
+<script src="LoganWrightMideterm_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="LoganWrightMideterm_files/libs/quarto-html/anchor.min.js"></script>
+<link href="LoganWrightMideterm_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="LoganWrightMideterm_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="LoganWrightMideterm_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="LoganWrightMideterm_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="LoganWrightMideterm_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+<script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
+
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+</head>
+
+<body class="fullcontent">
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+
+<main class="content" id="quarto-document-content">
+
+
+
+<section id="instructions" class="level1">
+<h1>Instructions</h1>
+<p>This exam is <strong>untimed</strong> and will be due on Tuesday March 4th at 12:45. You <strong>do not</strong> have to complete this exam in one contiguous block of time; feel free to stop and start as you please, but ensure that you do not come in contact with disallowed resources in between sessions. While taking this exam, you are allowed to use:</p>
+<ul>
+<li>your book(s)</li>
+<li>your notes</li>
+<li>your previous codes from this class</li>
+<li>your completed code lessons</li>
+<li>lecture slides</li>
+</ul>
+<p>and you <strong>are not allowed to use</strong>:</p>
+<ul>
+<li>the internet (if you need to look up python documentation, that’s fine)</li>
+<li>another person</li>
+<li>another person’s work</li>
+</ul>
+<section id="questions" class="level2">
+<h2 class="anchored" data-anchor-id="questions">Questions</h2>
+<section id="question-1-10-pts" class="level3">
+<h3 class="anchored" data-anchor-id="question-1-10-pts">Question 1: (10 pts)</h3>
+<p>In the wave equation we define r to be $c t x $, and note that if it is bigger than a value of ‘1’ it is unstable. Why does this instability exist?</p>
+<p>In general for numerical solutions to partial differential equations, every unique differential value requires a minimum step size to accurately describe the solution. Since the wave equation depends both on spacial and time coordinates, this requires us to be strategic in choosing a <span class="math inline">\(\Delta s\)</span> value and a <span class="math inline">\(\Delta t\)</span> value. Since the wave equation is linear, and especially the fact that the wave equation is of second order in both time and space, it communicates that time steps and spacial steps can be equaivalent at most. The reason that <span class="math inline">\(r\)</span> can also be less than one is when we consider that <span class="math inline">\(c\)</span> can be smaller than 1 as well.</p>
+</section>
+<section id="question-2-10-pts" class="level3">
+<h3 class="anchored" data-anchor-id="question-2-10-pts">Question 2 (10 pts)</h3>
+<p>Why is fourth-order Runge Kutta more accurate than Euler or second-order Runge Kutta?</p>
+<p>A simple answer would be because Euler method is Runge-Kutta of first order, second-order RK is two orders less than RK4. A more in depth reason is because of the idea of weighted averages on the slopes. Euler’s method will simply follow the slope with a weight of 1 on the first slope it computes with step size <span class="math inline">\(\Delta x\)</span>. This will accumulate an error of order <span class="math inline">\(O(h)\)</span>. Error accumulation is relatively large compared to RK2. RK2 will have two evalutations of the function’s slope and will assign a weight of 1/2 with each, thus getting more accurate to the true curve of the solution with error of order <span class="math inline">\(O(h^2)\)</span>. RK4, on the other hand, will compute 4 evaluations of the function’s slope and will weight those values to find the true slope with error only of order <span class="math inline">\(O(h^4)\)</span>. Since <span class="math inline">\(h\)</span> is small, the greater power of <span class="math inline">\(h\)</span> in the order function, the more precise that method will be.</p>
+</section>
+<section id="question-3-10-pts" class="level3">
+<h3 class="anchored" data-anchor-id="question-3-10-pts">Question 3 (10 pts)</h3>
+<p>Describe what is the differences between ‘k space’ and ‘frequency space’ in Fourier analysis.</p>
+<p>In linear algebra, we learn that vectors can be written in terms of certain sets of basis vectors. Orthonormality creates a lot of interesting topics in quantum mechanics and in upper level math courses. Fourier analysis relies on this same principle, but uses sine and cosine function to rewrite a function in terms of them as opposed to an n-dimensional column vector representation. So, a k-space in Fourier analysis relates to the initial vector space of the original function <span class="math inline">\(f(x)\)</span>. So, if I had a step function and I want to analyze it with Fourier analysis methods, my step function would initially exist within the k-space. The frequency space is where the transformed vector space exists, and my transformed step function would be rewritten in terms of sines and cosines whose frequencies would be represented by maxima in the <span class="math inline">\(f(\omega)\)</span> vs.&nbsp;frequency plot, and their amplitudes would tell me how much that frequency has influence on my step function. To demonstrate what I mean, I’ll pretend I have a vector <span class="math inline">\(\vec{v} = [x, y, z]^T\)</span>. If I obtain a new basis, such as {<span class="math inline">\(\vec{u}_i\)</span>}, then my vector, rewritten in terms of this new basis, will in general have different components, and the component magnitudes would be given by the amplitude or projection of itself onto the corresponding basis vectors in creating my original vector <span class="math inline">\(v\)</span>.</p>
+</section>
+<section id="question-4-20-pts" class="level3">
+<h3 class="anchored" data-anchor-id="question-4-20-pts">Question 4 (20 pts)</h3>
+<p>The Riemann Zeta function is defined as: <span class="math display">\[\begin{equation}
+\zeta(p) = \sum_{n=1}^\infty n^{-p}
+\end{equation}\]</span></p>
+<ol type="1">
+<li>Use a loop to evaluate this function for <span class="math inline">\(p = 0.5\)</span> and <span class="math inline">\(p = 1.5\)</span>. For which of these cases does the sum converge and for which does it diverge. (Watch out for infinite loops)</li>
+<li>Place your loop from part 1 into a function. Then evaluate the function on a discrete grid of points for <span class="math inline">\(1 &lt; p\le 10\)</span> and plot it.</li>
+</ol>
+<div class="cell" data-editable="true" data-execution_count="103">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Define the zeta function using a lambda and for loop to iterate _n times</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>ζ <span class="op">=</span> <span class="kw">lambda</span> _p, _n: <span class="bu">sum</span>([<span class="dv">1</span> <span class="op">/</span> (n <span class="op">**</span> _p) <span class="cf">for</span> n <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>, _n <span class="op">+</span> <span class="dv">1</span>)])</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>p0 <span class="op">=</span> <span class="fl">0.5</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>p1 <span class="op">=</span> <span class="fl">1.5</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="co"># To test for convergence, I will test a lot of different values of n to see if the number keeps changing significantly</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>n <span class="op">=</span> <span class="bu">list</span>(<span class="bu">range</span>(<span class="dv">100</span>, <span class="dv">501</span>))</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> _n <span class="kw">in</span> n:</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> _n <span class="op">%</span> <span class="dv">100</span> <span class="op">==</span> <span class="dv">0</span>:</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="ss">f"ζ(0.5) = </span><span class="sc">{ζ</span>(p0, _n)<span class="sc">}</span><span class="ss">, n = </span><span class="sc">{</span>_n<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>()</span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> _n <span class="kw">in</span> n:</span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> _n <span class="op">%</span> <span class="dv">100</span> <span class="op">==</span> <span class="dv">0</span>:</span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="ss">f"ζ(1.5) = </span><span class="sc">{ζ</span>(p1, _n)<span class="sc">}</span><span class="ss">, n = </span><span class="sc">{</span>_n<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>ζ(0.5) = 18.58960382478415, n = 100
+ζ(0.5) = 26.85925734634338, n = 200
+ζ(0.5) = 33.20952113727926, n = 300
+ζ(0.5) = 38.56464028285909, n = 400
+ζ(0.5) = 43.28336199418217, n = 500
+
+ζ(1.5) = 2.412874098703719, n = 100
+ζ(1.5) = 2.4711305481734134, n = 200
+ζ(1.5) = 2.4970014397050226, n = 300
+ζ(1.5) = 2.5124378096230244, n = 400
+ζ(1.5) = 2.522977328584379, n = 500</code></pre>
+</div>
+</div>
+<p>Clearly, <span class="math inline">\(p = 0.5\)</span> case is not going to be valid for a convergent solution. So, in general, <span class="math inline">\(ζ(p)\)</span> should have <span class="math inline">\(p &gt; 1\)</span> in order to converge. An interesting fact is that the sum <span class="math inline">\(\sum_{n=1}^{\infty} \frac{1}{n}\)</span> does not converge.</p>
+<section id="part-2" class="level4">
+<h4 class="anchored" data-anchor-id="part-2">Part 2</h4>
+<p>Now, I bring the operation into a function which was just completed and I plot different values of <span class="math inline">\(p\)</span> ranging from 1 (not inclusive) to 10 (inclusive) on integral steps.</p>
+<div class="cell" data-execution_count="104">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>p <span class="op">=</span> <span class="bu">list</span>(<span class="bu">range</span>(<span class="dv">2</span>, <span class="dv">11</span>))</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>n <span class="op">=</span> <span class="dv">1000</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Since ζ(p) is already a defined function, I will go ahead and produce a list of outputs and plot them against p values</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>_ζ <span class="op">=</span> [</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>    ζ(_p, n) <span class="cf">for</span> _p <span class="kw">in</span> p</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>]</span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">"Riemann Zeta function as a function of p"</span>)</span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">"p"</span>)</span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">"ζ(p)"</span>)</span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>plt.plot(p, _ζ)</span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<p><img src="LoganWrightMideterm_files/figure-html/cell-3-output-1.png" class="img-fluid"></p>
+</div>
+</div>
+</section>
+</section>
+<section id="question-5-25-pts" class="level3">
+<h3 class="anchored" data-anchor-id="question-5-25-pts">Question 5 (25 pts)</h3>
+<p>You are firing a cannon shell from a vehicle that is moving away from its target at a rate of <span class="math inline">\(30\)</span> m/s. At the moment you fire the shell, the target is <span class="math inline">\(10\)</span> km away(horizontally) and <span class="math inline">\(1000\)</span> meters higher in elevation. The exit speed of the shell is <span class="math inline">\(700\)</span> m/s. You cannot neglect air resistance and you should use the adiabatic approximation for the variation in air density with altitude. (equation (2.24) in the book.)</p>
+<ol type="1">
+<li>Use fourth-order Runge-Kutta to compute the shell’s trajectory.</li>
+<li>Using a loop, determine what the launch angle should be so that the shell strikes within 10 meters of the target.</li>
+</ol>
+<p>You may use the following variable values:</p>
+<p><span class="math display">\[
+g = 9.8 \mathrm{~m/s}^2 \hspace{1in} \rho_0 = 1.29 \mathrm{~kg/m}^3 \\
+T_0 = 320 \mathrm{~K} \alpha = 2.5 A = 0.007 \mathrm{~m}^2\\
+m = 50 \mathrm{~kg} C = 0.5 a =6.5 \times 10^{-3} \text{~K/m} \]</span></p>
+<div class="cell" data-execution_count="102">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Recall Eq. (2.24) where ρ = ρ0 * (1 - a * y / T0) ^ α</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>g <span class="op">=</span> <span class="fl">9.8</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>ρ<span class="dv">0</span> <span class="op">=</span> <span class="fl">1.29</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>T0 <span class="op">=</span> <span class="fl">320.0</span></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>α <span class="op">=</span> <span class="fl">2.5</span></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>A <span class="op">=</span> <span class="fl">7.0e-3</span></span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>m <span class="op">=</span> <span class="fl">50.0</span></span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>Cd <span class="op">=</span> <span class="fl">0.5</span></span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> <span class="fl">6.5e-3</span></span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>h <span class="op">=</span> <span class="fl">1e-2</span></span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a><span class="co"># Here, I write the forms of the vectors as to not get too lost in this :))</span></span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a><span class="co"># r = [x, y, vx, vy]</span></span>
+<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a><span class="co"># f(r, t) = dr/dt = [vx, vy, ax, ay] -&gt; this is special as it has no t dependence, but I will keep it there out of habit</span></span>
+<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a>f <span class="op">=</span> <span class="kw">lambda</span> _r, _t: np.array([</span>
+<span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a>    _r[<span class="dv">2</span>],</span>
+<span id="cb4-22"><a href="#cb4-22" aria-hidden="true" tabindex="-1"></a>    _r[<span class="dv">3</span>],</span>
+<span id="cb4-23"><a href="#cb4-23" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Since ax has no gravitational dependence, g is not a term here. Since F_drag has ρ in its definition,</span></span>
+<span id="cb4-24"><a href="#cb4-24" aria-hidden="true" tabindex="-1"></a>    <span class="co"># the term is squared, but ρ0 cancels with Eq. (2.25) so we get</span></span>
+<span id="cb4-25"><a href="#cb4-25" aria-hidden="true" tabindex="-1"></a>    <span class="co"># ρ0 / ρ0 * (1 - a * y / T0) ^ α * ρ0 * (1 - a * y / T0) ^ α = ρ0 * (1 - a * y / T0) ^ (2α)</span></span>
+<span id="cb4-26"><a href="#cb4-26" aria-hidden="true" tabindex="-1"></a>    <span class="op">-</span>ρ<span class="dv">0</span> <span class="op">*</span> (<span class="dv">1</span> <span class="op">-</span> a <span class="op">*</span> _r[<span class="dv">1</span>] <span class="op">/</span> T0) <span class="op">**</span> (<span class="dv">2</span> <span class="op">*</span> α) <span class="op">*</span> <span class="dv">1</span> <span class="op">/</span> <span class="dv">2</span> <span class="op">*</span> Cd <span class="op">*</span> A <span class="op">*</span> np.linalg.norm(_r[<span class="dv">2</span>] <span class="op">+</span> _r[<span class="dv">3</span>]) <span class="op">*</span> _r[<span class="dv">2</span>] <span class="op">/</span> m,</span>
+<span id="cb4-27"><a href="#cb4-27" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Also, v^2 * v_hat can be simplified to |v| * [vx, vy, vz] instead of |v|^2 * [vx, vy, vz] / |v| to get the components</span></span>
+<span id="cb4-28"><a href="#cb4-28" aria-hidden="true" tabindex="-1"></a>    <span class="op">-</span>ρ<span class="dv">0</span> <span class="op">*</span> (<span class="dv">1</span> <span class="op">-</span> a <span class="op">*</span> _r[<span class="dv">1</span>] <span class="op">/</span> T0) <span class="op">**</span> (<span class="dv">2</span> <span class="op">*</span> α) <span class="op">*</span> <span class="dv">1</span> <span class="op">/</span> <span class="dv">2</span> <span class="op">*</span> Cd <span class="op">*</span> A <span class="op">*</span> np.linalg.norm(_r[<span class="dv">2</span>] <span class="op">+</span> _r[<span class="dv">3</span>]) <span class="op">*</span> _r[<span class="dv">3</span>] <span class="op">/</span> m <span class="op">-</span> g</span>
+<span id="cb4-29"><a href="#cb4-29" aria-hidden="true" tabindex="-1"></a>])</span>
+<span id="cb4-30"><a href="#cb4-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-31"><a href="#cb4-31" aria-hidden="true" tabindex="-1"></a><span class="co"># Νow that f(r, t) is defined, I can work on the development of an RK4 function to solve the differential equation</span></span>
+<span id="cb4-32"><a href="#cb4-32" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> RK4(_f, _h, _r, _t):</span>
+<span id="cb4-33"><a href="#cb4-33" aria-hidden="true" tabindex="-1"></a>    k1 <span class="op">=</span> _h <span class="op">*</span> _f(_r, _t)</span>
+<span id="cb4-34"><a href="#cb4-34" aria-hidden="true" tabindex="-1"></a>    k2 <span class="op">=</span> _h <span class="op">*</span> _f(_r <span class="op">+</span> k1 <span class="op">/</span> <span class="dv">2</span>, _t <span class="op">+</span> _h <span class="op">/</span> <span class="dv">2</span>)</span>
+<span id="cb4-35"><a href="#cb4-35" aria-hidden="true" tabindex="-1"></a>    k3 <span class="op">=</span> _h <span class="op">*</span> _f(_r <span class="op">+</span> k2 <span class="op">/</span> <span class="dv">2</span>, _t <span class="op">+</span> _h <span class="op">/</span> <span class="dv">2</span>)</span>
+<span id="cb4-36"><a href="#cb4-36" aria-hidden="true" tabindex="-1"></a>    k4 <span class="op">=</span> _h <span class="op">*</span> _f(_r <span class="op">+</span> k3, _t <span class="op">+</span> _h)</span>
+<span id="cb4-37"><a href="#cb4-37" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> _r <span class="op">+</span> <span class="dv">1</span> <span class="op">/</span> <span class="dv">6</span> <span class="op">*</span> (k1 <span class="op">+</span> <span class="dv">2</span> <span class="op">*</span> k2 <span class="op">+</span> <span class="dv">2</span> <span class="op">*</span> k3 <span class="op">+</span> k4)</span>
+<span id="cb4-38"><a href="#cb4-38" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-39"><a href="#cb4-39" aria-hidden="true" tabindex="-1"></a><span class="co"># Recall, the initial conditions will be set as I create my r vector. My position will be relative to the target, so x is negative and y is positive</span></span>
+<span id="cb4-40"><a href="#cb4-40" aria-hidden="true" tabindex="-1"></a><span class="co"># and v is both to the right (+x) and pointed upward (+y)</span></span>
+<span id="cb4-41"><a href="#cb4-41" aria-hidden="true" tabindex="-1"></a>θ <span class="op">=</span> <span class="fl">3.1415926572</span> <span class="op">/</span> <span class="fl">2.35</span> <span class="co"># My initial guess for launch angle</span></span>
+<span id="cb4-42"><a href="#cb4-42" aria-hidden="true" tabindex="-1"></a><span class="co"># A small step size to increment theta each time to improve the approximation</span></span>
+<span id="cb4-43"><a href="#cb4-43" aria-hidden="true" tabindex="-1"></a>dθ <span class="op">=</span> <span class="fl">1e-3</span></span>
+<span id="cb4-44"><a href="#cb4-44" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-45"><a href="#cb4-45" aria-hidden="true" tabindex="-1"></a>x0 <span class="op">=</span> <span class="op">-</span><span class="fl">1.0e4</span></span>
+<span id="cb4-46"><a href="#cb4-46" aria-hidden="true" tabindex="-1"></a>y0 <span class="op">=</span> <span class="fl">1.0e3</span></span>
+<span id="cb4-47"><a href="#cb4-47" aria-hidden="true" tabindex="-1"></a>vx0 <span class="op">=</span> <span class="kw">lambda</span> _θ: <span class="fl">7.0e2</span> <span class="op">*</span> np.cos(_θ) <span class="op">-</span> <span class="fl">3.0e1</span></span>
+<span id="cb4-48"><a href="#cb4-48" aria-hidden="true" tabindex="-1"></a>vy0 <span class="op">=</span> <span class="kw">lambda</span> _θ: <span class="fl">7.0e2</span> <span class="op">*</span> np.sin(_θ)</span>
+<span id="cb4-49"><a href="#cb4-49" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-50"><a href="#cb4-50" aria-hidden="true" tabindex="-1"></a><span class="co"># Make lists to keep track of x and y positions through space</span></span>
+<span id="cb4-51"><a href="#cb4-51" aria-hidden="true" tabindex="-1"></a>t <span class="op">=</span> <span class="fl">0.0</span></span>
+<span id="cb4-52"><a href="#cb4-52" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-53"><a href="#cb4-53" aria-hidden="true" tabindex="-1"></a>epsilon <span class="op">=</span> <span class="fl">10.0</span></span>
+<span id="cb4-54"><a href="#cb4-54" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-55"><a href="#cb4-55" aria-hidden="true" tabindex="-1"></a>r <span class="op">=</span> np.array([</span>
+<span id="cb4-56"><a href="#cb4-56" aria-hidden="true" tabindex="-1"></a>    x0,</span>
+<span id="cb4-57"><a href="#cb4-57" aria-hidden="true" tabindex="-1"></a>    y0,</span>
+<span id="cb4-58"><a href="#cb4-58" aria-hidden="true" tabindex="-1"></a>    vx0(θ),</span>
+<span id="cb4-59"><a href="#cb4-59" aria-hidden="true" tabindex="-1"></a>    vy0(θ)</span>
+<span id="cb4-60"><a href="#cb4-60" aria-hidden="true" tabindex="-1"></a>], <span class="bu">float</span>)</span>
+<span id="cb4-61"><a href="#cb4-61" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-62"><a href="#cb4-62" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> <span class="bu">abs</span>(r[<span class="dv">0</span>]) <span class="op">&gt;</span> epsilon:</span>
+<span id="cb4-63"><a href="#cb4-63" aria-hidden="true" tabindex="-1"></a>    r <span class="op">=</span> np.array([</span>
+<span id="cb4-64"><a href="#cb4-64" aria-hidden="true" tabindex="-1"></a>        x0,</span>
+<span id="cb4-65"><a href="#cb4-65" aria-hidden="true" tabindex="-1"></a>        y0,</span>
+<span id="cb4-66"><a href="#cb4-66" aria-hidden="true" tabindex="-1"></a>        vx0(θ),</span>
+<span id="cb4-67"><a href="#cb4-67" aria-hidden="true" tabindex="-1"></a>        vy0(θ)</span>
+<span id="cb4-68"><a href="#cb4-68" aria-hidden="true" tabindex="-1"></a>    ], <span class="bu">float</span>)</span>
+<span id="cb4-69"><a href="#cb4-69" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-70"><a href="#cb4-70" aria-hidden="true" tabindex="-1"></a>    x <span class="op">=</span> [r[<span class="dv">0</span>]]</span>
+<span id="cb4-71"><a href="#cb4-71" aria-hidden="true" tabindex="-1"></a>    y <span class="op">=</span> [r[<span class="dv">1</span>]]</span>
+<span id="cb4-72"><a href="#cb4-72" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-73"><a href="#cb4-73" aria-hidden="true" tabindex="-1"></a>    <span class="cf">while</span> r[<span class="dv">1</span>] <span class="op">&gt;=</span> <span class="fl">0.0</span>:</span>
+<span id="cb4-74"><a href="#cb4-74" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Let RK4 forward step the position and velocity vector</span></span>
+<span id="cb4-75"><a href="#cb4-75" aria-hidden="true" tabindex="-1"></a>        r <span class="op">=</span> RK4(f, h, r, t)</span>
+<span id="cb4-76"><a href="#cb4-76" aria-hidden="true" tabindex="-1"></a>        x.append(r[<span class="dv">0</span>])</span>
+<span id="cb4-77"><a href="#cb4-77" aria-hidden="true" tabindex="-1"></a>        y.append(r[<span class="dv">1</span>])</span>
+<span id="cb4-78"><a href="#cb4-78" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb4-79"><a href="#cb4-79" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(r[<span class="dv">0</span>])</span>
+<span id="cb4-80"><a href="#cb4-80" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb4-81"><a href="#cb4-81" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> r[<span class="dv">0</span>] <span class="op">&gt;</span> <span class="dv">0</span>:</span>
+<span id="cb4-82"><a href="#cb4-82" aria-hidden="true" tabindex="-1"></a>        θ <span class="op">+=</span> dθ</span>
+<span id="cb4-83"><a href="#cb4-83" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
+<span id="cb4-84"><a href="#cb4-84" aria-hidden="true" tabindex="-1"></a>        θ <span class="op">-=</span> dθ</span>
+<span id="cb4-85"><a href="#cb4-85" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-86"><a href="#cb4-86" aria-hidden="true" tabindex="-1"></a>plt.plot(x, y)</span>
+<span id="cb4-87"><a href="#cb4-87" aria-hidden="true" tabindex="-1"></a>plt.show()</span>
+<span id="cb4-88"><a href="#cb4-88" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"First valid angle: </span><span class="sc">{θ:.4f}</span><span class="ss"> radians"</span>)</span>
+<span id="cb4-89"><a href="#cb4-89" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-90"><a href="#cb4-90" aria-hidden="true" tabindex="-1"></a><span class="co"># Since there is another solution, technically, and although it may not be physical, I'd like to seek out that solution as well.</span></span>
+<span id="cb4-91"><a href="#cb4-91" aria-hidden="true" tabindex="-1"></a>θ <span class="op">=</span> <span class="fl">3.1415926572</span> <span class="op">/</span> <span class="dv">100</span></span>
+<span id="cb4-92"><a href="#cb4-92" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-93"><a href="#cb4-93" aria-hidden="true" tabindex="-1"></a>r <span class="op">=</span> np.array([</span>
+<span id="cb4-94"><a href="#cb4-94" aria-hidden="true" tabindex="-1"></a>    x0,</span>
+<span id="cb4-95"><a href="#cb4-95" aria-hidden="true" tabindex="-1"></a>    y0,</span>
+<span id="cb4-96"><a href="#cb4-96" aria-hidden="true" tabindex="-1"></a>    vx0(θ),</span>
+<span id="cb4-97"><a href="#cb4-97" aria-hidden="true" tabindex="-1"></a>    vy0(θ)</span>
+<span id="cb4-98"><a href="#cb4-98" aria-hidden="true" tabindex="-1"></a>], <span class="bu">float</span>)</span>
+<span id="cb4-99"><a href="#cb4-99" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-100"><a href="#cb4-100" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> <span class="bu">abs</span>(r[<span class="dv">0</span>]) <span class="op">&gt;</span> epsilon:</span>
+<span id="cb4-101"><a href="#cb4-101" aria-hidden="true" tabindex="-1"></a>    r <span class="op">=</span> np.array([</span>
+<span id="cb4-102"><a href="#cb4-102" aria-hidden="true" tabindex="-1"></a>        x0,</span>
+<span id="cb4-103"><a href="#cb4-103" aria-hidden="true" tabindex="-1"></a>        y0,</span>
+<span id="cb4-104"><a href="#cb4-104" aria-hidden="true" tabindex="-1"></a>        vx0(θ),</span>
+<span id="cb4-105"><a href="#cb4-105" aria-hidden="true" tabindex="-1"></a>        vy0(θ)</span>
+<span id="cb4-106"><a href="#cb4-106" aria-hidden="true" tabindex="-1"></a>    ], <span class="bu">float</span>)</span>
+<span id="cb4-107"><a href="#cb4-107" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-108"><a href="#cb4-108" aria-hidden="true" tabindex="-1"></a>    x <span class="op">=</span> [r[<span class="dv">0</span>]]</span>
+<span id="cb4-109"><a href="#cb4-109" aria-hidden="true" tabindex="-1"></a>    y <span class="op">=</span> [r[<span class="dv">1</span>]]</span>
+<span id="cb4-110"><a href="#cb4-110" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-111"><a href="#cb4-111" aria-hidden="true" tabindex="-1"></a>    <span class="cf">while</span> r[<span class="dv">1</span>] <span class="op">&gt;=</span> <span class="fl">0.0</span>:</span>
+<span id="cb4-112"><a href="#cb4-112" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Let RK4 forward step the position and velocity vector</span></span>
+<span id="cb4-113"><a href="#cb4-113" aria-hidden="true" tabindex="-1"></a>        r <span class="op">=</span> RK4(f, h, r, t)</span>
+<span id="cb4-114"><a href="#cb4-114" aria-hidden="true" tabindex="-1"></a>        x.append(r[<span class="dv">0</span>])</span>
+<span id="cb4-115"><a href="#cb4-115" aria-hidden="true" tabindex="-1"></a>        y.append(r[<span class="dv">1</span>])</span>
+<span id="cb4-116"><a href="#cb4-116" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb4-117"><a href="#cb4-117" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(r[<span class="dv">0</span>])</span>
+<span id="cb4-118"><a href="#cb4-118" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb4-119"><a href="#cb4-119" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> r[<span class="dv">0</span>] <span class="op">&gt;</span> <span class="dv">0</span>:</span>
+<span id="cb4-120"><a href="#cb4-120" aria-hidden="true" tabindex="-1"></a>        θ <span class="op">-=</span> dθ</span>
+<span id="cb4-121"><a href="#cb4-121" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
+<span id="cb4-122"><a href="#cb4-122" aria-hidden="true" tabindex="-1"></a>        θ <span class="op">+=</span> dθ</span>
+<span id="cb4-123"><a href="#cb4-123" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-124"><a href="#cb4-124" aria-hidden="true" tabindex="-1"></a>plt.plot(x, y)</span>
+<span id="cb4-125"><a href="#cb4-125" aria-hidden="true" tabindex="-1"></a>plt.show()</span>
+<span id="cb4-126"><a href="#cb4-126" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Second valid angle: </span><span class="sc">{θ:.4f}</span><span class="ss"> radians"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>278.2659216032806
+231.53317278944235
+185.42341316125476
+139.23219670443865
+92.95950740061967
+45.91934187515377
+-0.5126196217299387</code></pre>
+</div>
+<div class="cell-output cell-output-display">
+<p><img src="LoganWrightMideterm_files/figure-html/cell-4-output-2.png" class="img-fluid"></p>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>First valid angle: 1.3418 radians
+-410.7738694672734
+-374.8343210611334
+-338.9633144350776
+-303.16071101593053
+-272.0799299313226
+-236.4070914364714
+-200.80225996694952
+-165.26529654127233
+-129.79606210371534
+-94.39441753230429
+-59.060223646935334
+-28.40162858156713
+6.804569270166405</code></pre>
+</div>
+<div class="cell-output cell-output-display">
+<p><img src="LoganWrightMideterm_files/figure-html/cell-4-output-4.png" class="img-fluid"></p>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Second valid angle: 0.0424 radians</code></pre>
+</div>
+</div>
+<p>As it is shown above, the RK4 method clearly handles the differential equation well and there exist 2 valid angle solutions to the problem (likely, depending on the real situation, only one would potentially be valid) given the initial conditions and requirements. Like in the text, the incorporation of air drag into the system causes a skew on the parabolic path and looks as expected. The Runge Kutta 4 method is strightforward and was quite simple to program. Had to make sure that my drag was always inducing an acceleration on the mass in the negative direction to its velocity, otherwise the solution will not converge and the while loops will never have a reason to stop. Again, valid solutions to <span class="math inline">\(\theta\)</span> are</p>
+<p><span class="math display">\[\theta \approx 1.34, 0.042 \hspace{0.1 in} \text{rad}\]</span></p>
+<section id="comments-on-the-validity-of-the-solutions" class="level4">
+<h4 class="anchored" data-anchor-id="comments-on-the-validity-of-the-solutions">Comments on the Validity of the Solutions</h4>
+<p>The smaller angle would not be valid if a certain wall had to be cleared for example, and the larger angle would not be valid if there were specific height requirements for the path of the projectile. There are more potential situations where only one is valid, and there exist some where neither would be valid.</p>
+</section>
+</section>
+<section id="question-6-25-pts" class="level3">
+<h3 class="anchored" data-anchor-id="question-6-25-pts">Question 6 (25 pts)</h3>
+<p>Please choose <strong>one</strong> question from the options below:</p>
+<section id="option-1" class="level4">
+<h4 class="anchored" data-anchor-id="option-1">Option 1:</h4>
+<p>A Faraday’s cage is a conducting enclosure meant to shield the interior (and any occupants) from strong electric fields present in the region. In this problem, you will use the SOR algorithm to study electrostatic shielding. Choose a simulation region with sizes: <span class="math inline">\(-0.1 &lt; x &lt; 0.1\)</span> and <span class="math inline">\(0 &lt; y &lt; 0.4\)</span> (<strong>note that dx and dy are not equal in this case!!!</strong>) and set the potential at the boundaries to be: <span class="math inline">\(V(-0.1,y) = -1\)</span>, <span class="math inline">\(V(0.1,y) = 1\)</span>, <span class="math inline">\(V(x,0) = V(x,0.4) = 0\)</span>. To simulating the shielding, ground some points (<span class="math inline">\(V = 0\)</span>) in the interior of your grid to simulate the cage. I’ll let you choose the exact dimensions of your grounded cage. Allow some holes in your cage so you can see how fields leak in.</p>
+<ol type="1">
+<li>You must use SOR</li>
+<li>You must plot the following:
+<ul>
+<li>A surface plot of the potential.</li>
+<li>A countour plot of the potential.</li>
+<li>A vector field plot of the electric field.</li>
+</ul></li>
+</ol>
+<div class="cell" data-execution_count="25">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Relaxation method to find the voltage as a function of space</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="co"># This function simply resets the boundaries only, no adjustments to important values</span></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> resetBoundaries(V):</span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>    <span class="co"># I pass through the rows, calling the direction through the rows -x, and setting</span></span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>    <span class="co"># the value equal to +/- 1, according to my boundary condition</span></span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> index1, x <span class="kw">in</span> <span class="bu">zip</span>(<span class="bu">range</span>(<span class="dv">0</span>, <span class="dv">100</span>, <span class="dv">1</span>), <span class="bu">range</span>(<span class="op">-</span><span class="dv">50</span>, <span class="dv">50</span>, <span class="dv">1</span>)):</span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>        V[index1][<span class="dv">0</span>] <span class="op">=</span> <span class="op">-</span><span class="fl">1.0</span></span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a>        V[index1][<span class="op">-</span><span class="dv">1</span>] <span class="op">=</span> <span class="fl">1.0</span></span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a>    <span class="co"># I likewise move across all of the y values, aside from the first and last,</span></span>
+<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a>    <span class="co"># and set them to zero. The reason for skipping first and last column index</span></span>
+<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a>    <span class="co"># is because I'm letting the boundary in the first and last columns be defined</span></span>
+<span id="cb8-15"><a href="#cb8-15" aria-hidden="true" tabindex="-1"></a>    <span class="co"># by +/- 1, according to above</span></span>
+<span id="cb8-16"><a href="#cb8-16" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> index2, y <span class="kw">in</span> <span class="bu">zip</span>(<span class="bu">range</span>(<span class="dv">1</span>, <span class="dv">99</span>, <span class="dv">1</span>), <span class="bu">range</span>(<span class="dv">1</span>, <span class="dv">99</span>, <span class="dv">1</span>)):</span>
+<span id="cb8-17"><a href="#cb8-17" aria-hidden="true" tabindex="-1"></a>        V[<span class="dv">0</span>][index2] <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb8-18"><a href="#cb8-18" aria-hidden="true" tabindex="-1"></a>        V[<span class="op">-</span><span class="dv">1</span>][index2] <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb8-19"><a href="#cb8-19" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb8-20"><a href="#cb8-20" aria-hidden="true" tabindex="-1"></a>    <span class="co"># And finally, I set V = 0 in the inner 20x20 square where the Faraday cage is located</span></span>
+<span id="cb8-21"><a href="#cb8-21" aria-hidden="true" tabindex="-1"></a>    <span class="co"># and I skip to every other opening to allow for leakage of field into the cage</span></span>
+<span id="cb8-22"><a href="#cb8-22" aria-hidden="true" tabindex="-1"></a>    <span class="co"># to see the effects</span></span>
+<span id="cb8-23"><a href="#cb8-23" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> index3 <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">40</span>, <span class="dv">60</span>, <span class="dv">2</span>):</span>
+<span id="cb8-24"><a href="#cb8-24" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> index4 <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">40</span>, <span class="dv">60</span>, <span class="dv">2</span>):</span>
+<span id="cb8-25"><a href="#cb8-25" aria-hidden="true" tabindex="-1"></a>            V[index3][index4] <span class="op">=</span> <span class="fl">0.0</span></span>
+<span id="cb8-26"><a href="#cb8-26" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb8-27"><a href="#cb8-27" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> V</span>
+<span id="cb8-28"><a href="#cb8-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-29"><a href="#cb8-29" aria-hidden="true" tabindex="-1"></a><span class="co"># And I create another function to average out the region</span></span>
+<span id="cb8-30"><a href="#cb8-30" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> averageRegion(V, loops <span class="op">=</span> <span class="dv">10_000</span>):</span>
+<span id="cb8-31"><a href="#cb8-31" aria-hidden="true" tabindex="-1"></a>    <span class="co"># We need to make a copy of V in order to have a stationary array for reference.</span></span>
+<span id="cb8-32"><a href="#cb8-32" aria-hidden="true" tabindex="-1"></a>    <span class="co"># The array V will be modified after 1 iteration in this for loop</span></span>
+<span id="cb8-33"><a href="#cb8-33" aria-hidden="true" tabindex="-1"></a>    V_stationary <span class="op">=</span> np.copy(V)</span>
+<span id="cb8-34"><a href="#cb8-34" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb8-35"><a href="#cb8-35" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Average over the number of loops specified</span></span>
+<span id="cb8-36"><a href="#cb8-36" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> _ <span class="kw">in</span> <span class="bu">range</span>(loops):</span>
+<span id="cb8-37"><a href="#cb8-37" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Iterate through the rows and columns being sure to avoid the first and</span></span>
+<span id="cb8-38"><a href="#cb8-38" aria-hidden="true" tabindex="-1"></a>        <span class="co"># last row indeces and the first and last column indeces</span></span>
+<span id="cb8-39"><a href="#cb8-39" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> index1, x <span class="kw">in</span> <span class="bu">zip</span>(<span class="bu">range</span>(<span class="dv">1</span>, <span class="dv">99</span>, <span class="dv">1</span>), <span class="bu">range</span>(<span class="op">-</span><span class="dv">49</span>, <span class="dv">49</span>, <span class="dv">1</span>)):</span>
+<span id="cb8-40"><a href="#cb8-40" aria-hidden="true" tabindex="-1"></a>            <span class="cf">for</span> index2, y <span class="kw">in</span> <span class="bu">zip</span>(<span class="bu">range</span>(<span class="dv">1</span>, <span class="dv">99</span>, <span class="dv">1</span>), <span class="bu">range</span>(<span class="dv">1</span>, <span class="dv">99</span>, <span class="dv">1</span>)):</span>
+<span id="cb8-41"><a href="#cb8-41" aria-hidden="true" tabindex="-1"></a>                <span class="co"># Successively average the region by adding the 4 adjacent values</span></span>
+<span id="cb8-42"><a href="#cb8-42" aria-hidden="true" tabindex="-1"></a>                <span class="co"># and the dividing the sum by 4</span></span>
+<span id="cb8-43"><a href="#cb8-43" aria-hidden="true" tabindex="-1"></a>                V[index1, index2] <span class="op">=</span> <span class="dv">1</span> <span class="op">/</span> <span class="dv">4</span> <span class="op">*</span> (V_stationary[index1 <span class="op">-</span> <span class="dv">1</span>, index2] <span class="op">+</span> V_stationary[index1 <span class="op">+</span> <span class="dv">1</span>, index2] <span class="op">\</span></span>
+<span id="cb8-44"><a href="#cb8-44" aria-hidden="true" tabindex="-1"></a>                                             <span class="op">+</span> V_stationary[index1, index2 <span class="op">-</span> <span class="dv">1</span>] <span class="op">+</span> V_stationary[index1, index2 <span class="op">+</span> <span class="dv">1</span>])</span>
+<span id="cb8-45"><a href="#cb8-45" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb8-46"><a href="#cb8-46" aria-hidden="true" tabindex="-1"></a>        <span class="co"># After a loop, reset the boundaries for V and then update V_stationary to become the new V</span></span>
+<span id="cb8-47"><a href="#cb8-47" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Also, since V is an array, it is passed to this function by reference</span></span>
+<span id="cb8-48"><a href="#cb8-48" aria-hidden="true" tabindex="-1"></a>        <span class="co"># and thus will be updated without needing to return the values. So I simply call the function and pass to it V</span></span>
+<span id="cb8-49"><a href="#cb8-49" aria-hidden="true" tabindex="-1"></a>        resetBoundaries(V)</span>
+<span id="cb8-50"><a href="#cb8-50" aria-hidden="true" tabindex="-1"></a>        V_stationary <span class="op">=</span> np.copy(V)</span>
+<span id="cb8-51"><a href="#cb8-51" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb8-52"><a href="#cb8-52" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Reset the boundaries once more on exit</span></span>
+<span id="cb8-53"><a href="#cb8-53" aria-hidden="true" tabindex="-1"></a>    resetBoundaries(V)</span>
+<span id="cb8-54"><a href="#cb8-54" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb8-55"><a href="#cb8-55" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> V</span>
+<span id="cb8-56"><a href="#cb8-56" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-57"><a href="#cb8-57" aria-hidden="true" tabindex="-1"></a><span class="co"># Then, I made a grid of the voltage initially</span></span>
+<span id="cb8-58"><a href="#cb8-58" aria-hidden="true" tabindex="-1"></a>V <span class="op">=</span> np.zeros((<span class="dv">100</span>, <span class="dv">100</span>), dtype <span class="op">=</span> <span class="bu">float</span>)</span>
+<span id="cb8-59"><a href="#cb8-59" aria-hidden="true" tabindex="-1"></a>V <span class="op">=</span> resetBoundaries(V)</span>
+<span id="cb8-60"><a href="#cb8-60" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-61"><a href="#cb8-61" aria-hidden="true" tabindex="-1"></a><span class="co"># Additionally, create the 2d meshgrid for matplotlib to map position the voltage values</span></span>
+<span id="cb8-62"><a href="#cb8-62" aria-hidden="true" tabindex="-1"></a><span class="co"># onto the plot</span></span>
+<span id="cb8-63"><a href="#cb8-63" aria-hidden="true" tabindex="-1"></a>X, Y <span class="op">=</span> np.meshgrid(np.array(<span class="bu">range</span>(<span class="op">-</span><span class="dv">50</span>, <span class="dv">50</span>, <span class="dv">1</span>), dtype <span class="op">=</span> <span class="bu">float</span>), np.array(<span class="bu">range</span>(<span class="dv">0</span>, <span class="dv">100</span>, <span class="dv">1</span>), dtype <span class="op">=</span> <span class="bu">float</span>))</span>
+<span id="cb8-64"><a href="#cb8-64" aria-hidden="true" tabindex="-1"></a>X <span class="op">/=</span> <span class="dv">500</span></span>
+<span id="cb8-65"><a href="#cb8-65" aria-hidden="true" tabindex="-1"></a>Y <span class="op">/=</span> <span class="dv">250</span></span>
+<span id="cb8-66"><a href="#cb8-66" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-67"><a href="#cb8-67" aria-hidden="true" tabindex="-1"></a>V <span class="op">=</span> averageRegion(V, <span class="dv">20_000</span>)</span>
+<span id="cb8-68"><a href="#cb8-68" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-69"><a href="#cb8-69" aria-hidden="true" tabindex="-1"></a><span class="co"># Finally, plot the solution. First is surface plot, and then contour plot.</span></span>
+<span id="cb8-70"><a href="#cb8-70" aria-hidden="true" tabindex="-1"></a><span class="co"># Lastly, I compute the negative directional derivatives (gradient) of the voltage</span></span>
+<span id="cb8-71"><a href="#cb8-71" aria-hidden="true" tabindex="-1"></a><span class="co"># to calculate my Electric vector field</span></span>
+<span id="cb8-72"><a href="#cb8-72" aria-hidden="true" tabindex="-1"></a>fig1, ax1 <span class="op">=</span> plt.subplots(subplot_kw <span class="op">=</span> {<span class="st">"projection"</span>: <span class="st">"3d"</span>})</span>
+<span id="cb8-73"><a href="#cb8-73" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-74"><a href="#cb8-74" aria-hidden="true" tabindex="-1"></a>surf <span class="op">=</span> ax1.plot_surface(X <span class="op">=</span> X, Y <span class="op">=</span> Y, Z <span class="op">=</span> V, cmap <span class="op">=</span> <span class="st">'cool'</span>)</span>
+<span id="cb8-75"><a href="#cb8-75" aria-hidden="true" tabindex="-1"></a>plt.show(fig1)</span>
+<span id="cb8-76"><a href="#cb8-76" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-77"><a href="#cb8-77" aria-hidden="true" tabindex="-1"></a>plt.contourf(X, Y, V, colormap <span class="op">=</span> <span class="st">'cool'</span>)</span>
+<span id="cb8-78"><a href="#cb8-78" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<p><img src="LoganWrightMideterm_files/figure-html/cell-5-output-1.png" class="img-fluid"></p>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>/var/folders/wt/m3rtv90d1xvfs20h6qn_kfjc0000gn/T/ipykernel_78785/2196606575.py:77: UserWarning: The following kwargs were not used by contour: 'colormap'
+  plt.contourf(X, Y, V, colormap = 'cool')</code></pre>
+</div>
+<div class="cell-output cell-output-display">
+<p><img src="LoganWrightMideterm_files/figure-html/cell-5-output-3.png" class="img-fluid"></p>
+</div>
+</div>
+<div class="cell" data-execution_count="105">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Now, to find the gradient of the field, I use a simple derivative function where -grad(V) = -[dV/dx, dV/dy] and dV/dx = -(V(x + dx) - V(x)) / dx</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="co"># As you can see, the voltage is not a function of Z to keep the visualization simple. Thus, the electric field only has an x and a y component</span></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>dx <span class="op">=</span> <span class="fl">0.2</span> <span class="op">/</span> <span class="dv">100</span></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>dy <span class="op">=</span> <span class="fl">0.4</span> <span class="op">/</span> <span class="dv">100</span></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> grad(V):</span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>    <span class="co"># To build a quiver plot, they need to know the location of the vector as well as its components</span></span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>    <span class="co"># but the location is exactly where the X, Y meshgrid lines up. So, I have to find the vector</span></span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a>    <span class="co"># components in the same order such that the coordinates match the locations of X, Y</span></span>
+<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a>    _U <span class="op">=</span> np.zeros((<span class="dv">100</span>, <span class="dv">100</span>))</span>
+<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a>    _V <span class="op">=</span> np.zeros((<span class="dv">100</span>, <span class="dv">100</span>))</span>
+<span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb10-13"><a href="#cb10-13" aria-hidden="true" tabindex="-1"></a>    <span class="co"># The derivatives will be computed using center difference method in the middle of the field</span></span>
+<span id="cb10-14"><a href="#cb10-14" aria-hidden="true" tabindex="-1"></a>    <span class="co"># and the ends will be computed with forward/backward difference where applicable.</span></span>
+<span id="cb10-15"><a href="#cb10-15" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> index1, x <span class="kw">in</span> <span class="bu">zip</span>(<span class="bu">range</span>(<span class="dv">1</span>, <span class="dv">99</span>), <span class="bu">range</span>(<span class="op">-</span><span class="dv">49</span>, <span class="dv">49</span>)):</span>
+<span id="cb10-16"><a href="#cb10-16" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> index2, y <span class="kw">in</span> <span class="bu">zip</span>(<span class="bu">range</span>(<span class="dv">1</span>, <span class="dv">99</span>), <span class="bu">range</span>(<span class="dv">1</span>, <span class="dv">99</span>)):</span>
+<span id="cb10-17"><a href="#cb10-17" aria-hidden="true" tabindex="-1"></a>            dVdx <span class="op">=</span> <span class="op">-</span>(V[index1 <span class="op">+</span> <span class="dv">1</span>][index2] <span class="op">-</span> V[index1 <span class="op">-</span> <span class="dv">1</span>][index2]) <span class="op">/</span> (<span class="dv">2</span> <span class="op">*</span> dx)</span>
+<span id="cb10-18"><a href="#cb10-18" aria-hidden="true" tabindex="-1"></a>            dVdy <span class="op">=</span> <span class="op">-</span>(V[index1][index2 <span class="op">+</span> <span class="dv">1</span>] <span class="op">-</span> V[index1][index2 <span class="op">-</span> <span class="dv">1</span>]) <span class="op">/</span> (<span class="dv">2</span> <span class="op">*</span> dy)</span>
+<span id="cb10-19"><a href="#cb10-19" aria-hidden="true" tabindex="-1"></a>            _U[index1][index2] <span class="op">=</span> dVdx</span>
+<span id="cb10-20"><a href="#cb10-20" aria-hidden="true" tabindex="-1"></a>            _V[index1][index2] <span class="op">=</span> dVdy</span>
+<span id="cb10-21"><a href="#cb10-21" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb10-22"><a href="#cb10-22" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Edge derivates - left</span></span>
+<span id="cb10-23"><a href="#cb10-23" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> index1 <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>, <span class="dv">99</span>):</span>
+<span id="cb10-24"><a href="#cb10-24" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Center diff still works for x, but not for y</span></span>
+<span id="cb10-25"><a href="#cb10-25" aria-hidden="true" tabindex="-1"></a>        dVdx <span class="op">=</span> <span class="op">-</span>(V[index1 <span class="op">+</span> <span class="dv">1</span>][<span class="dv">0</span>] <span class="op">-</span> V[index1 <span class="op">-</span> <span class="dv">1</span>][<span class="dv">0</span>]) <span class="op">/</span> (<span class="dv">2</span> <span class="op">*</span> dx)</span>
+<span id="cb10-26"><a href="#cb10-26" aria-hidden="true" tabindex="-1"></a>        dVdy <span class="op">=</span> <span class="op">-</span>(V[index1][<span class="dv">1</span>] <span class="op">-</span> V[index1][<span class="dv">0</span>]) <span class="op">/</span> dy</span>
+<span id="cb10-27"><a href="#cb10-27" aria-hidden="true" tabindex="-1"></a>        _U[index1][<span class="dv">0</span>] <span class="op">=</span> dVdx</span>
+<span id="cb10-28"><a href="#cb10-28" aria-hidden="true" tabindex="-1"></a>        _V[index1][<span class="dv">0</span>] <span class="op">=</span> dVdy</span>
+<span id="cb10-29"><a href="#cb10-29" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb10-30"><a href="#cb10-30" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Edge derivates - right</span></span>
+<span id="cb10-31"><a href="#cb10-31" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> index1 <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>, <span class="dv">99</span>):</span>
+<span id="cb10-32"><a href="#cb10-32" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Center diff still works for x, but not for y</span></span>
+<span id="cb10-33"><a href="#cb10-33" aria-hidden="true" tabindex="-1"></a>        dVdx <span class="op">=</span> <span class="op">-</span>(V[index1 <span class="op">+</span> <span class="dv">1</span>][<span class="op">-</span><span class="dv">1</span>] <span class="op">-</span> V[index1 <span class="op">-</span> <span class="dv">1</span>][<span class="op">-</span><span class="dv">1</span>]) <span class="op">/</span> (<span class="dv">2</span> <span class="op">*</span> dx)</span>
+<span id="cb10-34"><a href="#cb10-34" aria-hidden="true" tabindex="-1"></a>        dVdy <span class="op">=</span> <span class="op">-</span>(V[index1][<span class="op">-</span><span class="dv">1</span>] <span class="op">-</span> V[index1][<span class="op">-</span><span class="dv">2</span>]) <span class="op">/</span> dy</span>
+<span id="cb10-35"><a href="#cb10-35" aria-hidden="true" tabindex="-1"></a>        _U[index1][<span class="op">-</span><span class="dv">1</span>] <span class="op">=</span> dVdx</span>
+<span id="cb10-36"><a href="#cb10-36" aria-hidden="true" tabindex="-1"></a>        _V[index1][<span class="op">-</span><span class="dv">1</span>] <span class="op">=</span> dVdy</span>
+<span id="cb10-37"><a href="#cb10-37" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb10-38"><a href="#cb10-38" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Edge derivates - top</span></span>
+<span id="cb10-39"><a href="#cb10-39" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> index2 <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>, <span class="dv">99</span>):</span>
+<span id="cb10-40"><a href="#cb10-40" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Center diff works for y this time, but not for x</span></span>
+<span id="cb10-41"><a href="#cb10-41" aria-hidden="true" tabindex="-1"></a>        dVdx <span class="op">=</span> <span class="op">-</span>(V[<span class="dv">1</span>][index2] <span class="op">-</span> V[<span class="dv">0</span>][index2]) <span class="op">/</span> dx</span>
+<span id="cb10-42"><a href="#cb10-42" aria-hidden="true" tabindex="-1"></a>        dVdy <span class="op">=</span> <span class="op">-</span>(V[<span class="dv">0</span>][index2 <span class="op">+</span> <span class="dv">1</span>] <span class="op">-</span> V[<span class="dv">0</span>][index2 <span class="op">-</span> <span class="dv">1</span>]) <span class="op">/</span> (<span class="dv">2</span> <span class="op">*</span> dy)</span>
+<span id="cb10-43"><a href="#cb10-43" aria-hidden="true" tabindex="-1"></a>        _U[<span class="dv">0</span>][index2] <span class="op">=</span> dVdx</span>
+<span id="cb10-44"><a href="#cb10-44" aria-hidden="true" tabindex="-1"></a>        _V[<span class="dv">0</span>][index2] <span class="op">=</span> dVdy</span>
+<span id="cb10-45"><a href="#cb10-45" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb10-46"><a href="#cb10-46" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Edge derivates - bottom</span></span>
+<span id="cb10-47"><a href="#cb10-47" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> index2 <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>, <span class="dv">99</span>):</span>
+<span id="cb10-48"><a href="#cb10-48" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Center diff works for y this time, but not for x</span></span>
+<span id="cb10-49"><a href="#cb10-49" aria-hidden="true" tabindex="-1"></a>        dVdx <span class="op">=</span> <span class="op">-</span>(V[<span class="op">-</span><span class="dv">1</span>][index2] <span class="op">-</span> V[<span class="op">-</span><span class="dv">2</span>][index2]) <span class="op">/</span> dx</span>
+<span id="cb10-50"><a href="#cb10-50" aria-hidden="true" tabindex="-1"></a>        dVdy <span class="op">=</span> <span class="op">-</span>(V[<span class="op">-</span><span class="dv">1</span>][index2 <span class="op">+</span> <span class="dv">1</span>] <span class="op">-</span> V[<span class="op">-</span><span class="dv">1</span>][index2 <span class="op">-</span> <span class="dv">1</span>]) <span class="op">/</span> (<span class="dv">2</span> <span class="op">*</span> dy)</span>
+<span id="cb10-51"><a href="#cb10-51" aria-hidden="true" tabindex="-1"></a>        _U[<span class="op">-</span><span class="dv">1</span>][index2] <span class="op">=</span> dVdx</span>
+<span id="cb10-52"><a href="#cb10-52" aria-hidden="true" tabindex="-1"></a>        _V[<span class="op">-</span><span class="dv">1</span>][index2] <span class="op">=</span> dVdy</span>
+<span id="cb10-53"><a href="#cb10-53" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb10-54"><a href="#cb10-54" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Corner derivatives in the array - top left</span></span>
+<span id="cb10-55"><a href="#cb10-55" aria-hidden="true" tabindex="-1"></a>    dVdx <span class="op">=</span> <span class="op">-</span>(V[<span class="dv">1</span>][<span class="dv">0</span>] <span class="op">-</span> V[<span class="dv">0</span>][<span class="dv">0</span>]) <span class="op">/</span> dx</span>
+<span id="cb10-56"><a href="#cb10-56" aria-hidden="true" tabindex="-1"></a>    dVdy <span class="op">=</span> <span class="op">-</span>(V[<span class="dv">0</span>][<span class="dv">1</span>] <span class="op">-</span> V[<span class="dv">0</span>][<span class="dv">0</span>]) <span class="op">/</span> dy</span>
+<span id="cb10-57"><a href="#cb10-57" aria-hidden="true" tabindex="-1"></a>    _U[<span class="dv">0</span>][<span class="dv">0</span>] <span class="op">=</span> dVdx</span>
+<span id="cb10-58"><a href="#cb10-58" aria-hidden="true" tabindex="-1"></a>    _V[<span class="dv">0</span>][<span class="dv">0</span>] <span class="op">=</span> dVdy</span>
+<span id="cb10-59"><a href="#cb10-59" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb10-60"><a href="#cb10-60" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Corner derivatives in the array - top right</span></span>
+<span id="cb10-61"><a href="#cb10-61" aria-hidden="true" tabindex="-1"></a>    dVdx <span class="op">=</span> <span class="op">-</span>(V[<span class="dv">1</span>][<span class="op">-</span><span class="dv">1</span>] <span class="op">-</span> V[<span class="dv">0</span>][<span class="op">-</span><span class="dv">1</span>]) <span class="op">/</span> dx</span>
+<span id="cb10-62"><a href="#cb10-62" aria-hidden="true" tabindex="-1"></a>    dVdy <span class="op">=</span> <span class="op">-</span>(V[<span class="dv">0</span>][<span class="op">-</span><span class="dv">1</span>] <span class="op">-</span> V[<span class="dv">0</span>][<span class="op">-</span><span class="dv">2</span>]) <span class="op">/</span> dy</span>
+<span id="cb10-63"><a href="#cb10-63" aria-hidden="true" tabindex="-1"></a>    _U[<span class="dv">0</span>][<span class="op">-</span><span class="dv">1</span>] <span class="op">=</span> dVdx</span>
+<span id="cb10-64"><a href="#cb10-64" aria-hidden="true" tabindex="-1"></a>    _V[<span class="dv">0</span>][<span class="op">-</span><span class="dv">1</span>] <span class="op">=</span> dVdy</span>
+<span id="cb10-65"><a href="#cb10-65" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb10-66"><a href="#cb10-66" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Corner derivatives in the array - bottom left</span></span>
+<span id="cb10-67"><a href="#cb10-67" aria-hidden="true" tabindex="-1"></a>    dVdx <span class="op">=</span> <span class="op">-</span>(V[<span class="op">-</span><span class="dv">1</span>][<span class="dv">0</span>] <span class="op">-</span> V[<span class="op">-</span><span class="dv">2</span>][<span class="dv">0</span>]) <span class="op">/</span> dx</span>
+<span id="cb10-68"><a href="#cb10-68" aria-hidden="true" tabindex="-1"></a>    dVdy <span class="op">=</span> <span class="op">-</span>(V[<span class="op">-</span><span class="dv">1</span>][<span class="dv">1</span>] <span class="op">-</span> V[<span class="op">-</span><span class="dv">1</span>][<span class="dv">0</span>]) <span class="op">/</span> dy</span>
+<span id="cb10-69"><a href="#cb10-69" aria-hidden="true" tabindex="-1"></a>    _U[<span class="op">-</span><span class="dv">1</span>][<span class="dv">0</span>] <span class="op">=</span> dVdx</span>
+<span id="cb10-70"><a href="#cb10-70" aria-hidden="true" tabindex="-1"></a>    _V[<span class="op">-</span><span class="dv">1</span>][<span class="dv">0</span>] <span class="op">=</span> dVdy</span>
+<span id="cb10-71"><a href="#cb10-71" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb10-72"><a href="#cb10-72" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Corner derivatives in the array - bottom right</span></span>
+<span id="cb10-73"><a href="#cb10-73" aria-hidden="true" tabindex="-1"></a>    dVdx <span class="op">=</span> <span class="op">-</span>(V[<span class="op">-</span><span class="dv">1</span>][<span class="op">-</span><span class="dv">1</span>] <span class="op">-</span> V[<span class="op">-</span><span class="dv">2</span>][<span class="op">-</span><span class="dv">1</span>]) <span class="op">/</span> dx</span>
+<span id="cb10-74"><a href="#cb10-74" aria-hidden="true" tabindex="-1"></a>    dVdy <span class="op">=</span> <span class="op">-</span>(V[<span class="op">-</span><span class="dv">1</span>][<span class="op">-</span><span class="dv">1</span>] <span class="op">-</span> V[<span class="op">-</span><span class="dv">1</span>][<span class="op">-</span><span class="dv">2</span>]) <span class="op">/</span> dy</span>
+<span id="cb10-75"><a href="#cb10-75" aria-hidden="true" tabindex="-1"></a>    _U[<span class="op">-</span><span class="dv">1</span>][<span class="op">-</span><span class="dv">1</span>] <span class="op">=</span> dVdx</span>
+<span id="cb10-76"><a href="#cb10-76" aria-hidden="true" tabindex="-1"></a>    _V[<span class="op">-</span><span class="dv">1</span>][<span class="op">-</span><span class="dv">1</span>] <span class="op">=</span> dVdy</span>
+<span id="cb10-77"><a href="#cb10-77" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb10-78"><a href="#cb10-78" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> _V, _U</span>
+<span id="cb10-79"><a href="#cb10-79" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-80"><a href="#cb10-80" aria-hidden="true" tabindex="-1"></a>E <span class="op">=</span> grad(V)</span>
+<span id="cb10-81"><a href="#cb10-81" aria-hidden="true" tabindex="-1"></a>skips <span class="op">=</span> <span class="dv">5</span></span>
+<span id="cb10-82"><a href="#cb10-82" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-83"><a href="#cb10-83" aria-hidden="true" tabindex="-1"></a>X, Y <span class="op">=</span> np.meshgrid(np.array(<span class="bu">range</span>(<span class="op">-</span><span class="dv">50</span>, <span class="dv">50</span>, <span class="dv">1</span>), dtype <span class="op">=</span> <span class="bu">float</span>), np.array(<span class="bu">range</span>(<span class="dv">0</span>, <span class="dv">100</span>, <span class="dv">1</span>), dtype <span class="op">=</span> <span class="bu">float</span>))</span>
+<span id="cb10-84"><a href="#cb10-84" aria-hidden="true" tabindex="-1"></a>X <span class="op">/=</span> <span class="dv">500</span></span>
+<span id="cb10-85"><a href="#cb10-85" aria-hidden="true" tabindex="-1"></a>Y <span class="op">/=</span> <span class="dv">250</span></span>
+<span id="cb10-86"><a href="#cb10-86" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-87"><a href="#cb10-87" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">"Electric field surrounding a Faraday Cage"</span>)</span>
+<span id="cb10-88"><a href="#cb10-88" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">"x (m)"</span>)</span>
+<span id="cb10-89"><a href="#cb10-89" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">"y (m)"</span>)</span>
+<span id="cb10-90"><a href="#cb10-90" aria-hidden="true" tabindex="-1"></a><span class="co"># Plotting every point gets VERY messy VERY quick, so I skip over some of the in-between points to clean up the output</span></span>
+<span id="cb10-91"><a href="#cb10-91" aria-hidden="true" tabindex="-1"></a>plt.quiver(X[::skips, ::skips], Y[::skips, ::skips], E[<span class="dv">0</span>][::skips, ::skips], E[<span class="dv">1</span>][::skips, ::skips], color <span class="op">=</span> <span class="st">'darkblue'</span>)</span>
+<span id="cb10-92"><a href="#cb10-92" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<p><img src="LoganWrightMideterm_files/figure-html/cell-6-output-1.png" class="img-fluid"></p>
+</div>
+</div>
+</section>
+<section id="option-2" class="level4">
+<h4 class="anchored" data-anchor-id="option-2">Option 2:</h4>
+<p>The undamped, undriven wave equation is given by: <span class="math display">\[
+\frac{\partial^2 y}{\partial t^2} = c^2 \frac{\partial^2 y}{\partial x^2}  \qquad  (1)
+\]</span> where <span class="math inline">\(c = \sqrt{T\over \mu}\)</span>. We can add a stiffness factor into the wave equation (think about the difference between a vibrating string vs.&nbsp;a vibrating wire) by adding a fourth order spatial derivative, so the wave equation looks like this: <span class="math display">\[
+\frac{\partial^2 y}{\partial t^2} = c^2 \left(\frac{\partial^2
+    y}{\partial x^2} - \epsilon L^2\frac{\partial^4 y}{\partial x^4}\right)  \qquad  (2)
+\]</span> where <span class="math inline">\(\epsilon\)</span> is a stiffness parameter and <span class="math inline">\(L\)</span> is the length of the string. The fourth derivative can be written in discrete form like this: <span class="math display">\[
+\frac{\partial^4 y}{\partial x^4} = \frac{y_{j + 2}^n - 4 y_{j +
+    1}^n + 6 y_j^n - 4 y_{j -1}^n + y_{j-2}^n}{h^4}    \qquad  (3)
+\]</span></p>
+<ol type="a">
+<li><p>Use Equation (3) and the other formulas for discrete derivatives that you are already familiar with to discretize equation(2). Then solve for <span class="math inline">\(y_j^{n+1}\)</span></p></li>
+<li><p>Use the discretization from part (a) to write a python program to animate waves on the horizontal string, fixed at both ends. Use the gaussian initial displacement:</p></li>
+</ol>
+<p><span class="math display">\[
+y(x,0) = e^{-\frac{160 (x - {L \over 2})^2}{L^2}}   \qquad  (4)
+\]</span></p>
+<p>with zero initial velocity and the parameter values: <span class="math inline">\(T = 127\, N\)</span>, <span class="math inline">\(\mu = 0.003 \,kg/m\)</span>, and <span class="math inline">\(\epsilon = 1\times 10^{-5}\)</span></p>
+<ol start="3" type="a">
+<li>Perform a Fourier Analysis of the frequencies that form from this initialization and note the fundamental and first three overtones.</li>
+</ol>
+<div class="cell" data-editable="true" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> IPython.display <span class="im">import</span> Image</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="co"># get the image</span></span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>Image(url<span class="op">=</span><span class="st">"stiffness.png"</span>, width<span class="op">=</span><span class="dv">300</span>, height<span class="op">=</span><span class="dv">300</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="1">
+<img src="stiffness.png" width="300" height="300">
+</div>
+</div>
+<p>Here are some tips/hints that may help.</p>
+<ol type="1">
+<li>Notice that equation (3) steps forward and backward <span class="math inline">\(\textbf{two spatial grid points}\)</span>. We’ve never had to deal with this before. This means that the equation from part (b) cannot be used to update the first <span class="math inline">\(\text{two}\)</span> grid points or the last <span class="math inline">\(\textbf{two}\)</span> grid points (instead of just the first and last like we’re used to). To handle this challenge, consider using a <span class="math inline">\(\textbf{cell-edge}\)</span> grid (not cell-centered) with ghost points. One ghost point is one step to the left of <span class="math inline">\(x = 0\)</span> and the other ghost point is one step to the right of <span class="math inline">\(x = L\)</span> (see the figure). To enforce fixed boundary conditions, you can update the ghost points by simply mirroring them across <span class="math inline">\(x = 0\)</span> and <span class="math inline">\(x = L\)</span>, like this: <span class="math display">\[
+y[0] = - y[2]  \qquad \qquad      y[-1] = -y[-3]
+\]</span> (If you need to come talk to me about this please feel free to.)</li>
+<li>Normally you would need to derive an expression for <span class="math inline">\(\verb!yOld!\)</span> to get the animation started. However, since the string is not moving initially, just set <span class="math inline">\(\verb!yOld!\)</span> to be equal to equation</li>
+</ol>
+<ol start="4" type="1">
+<li>initially.</li>
+</ol>
+<ol start="3" type="1">
+<li>There will be a new Courant condition for this situation and it’s much more drastic than you’re used to (because of the fourth order derivative). Don’t be afraid to drop <span class="math inline">\(\tau\)</span> drastically and adjust your animation speed accordingly and don’t run it too long.</li>
+<li>To test the accuracy of your simulation, play with different values of <span class="math inline">\(\epsilon\)</span> and see if the resulting vibration makes good conceptual sense. Large values of <span class="math inline">\(\epsilon\)</span> correspond to stiffer materials. Note that changing <span class="math inline">\(\epsilon\)</span> also changes your Courant condition and your frequencies from Fourier analysis. (I ran mine from <span class="math inline">\(1\times 10^{-2}\)</span> to <span class="math inline">\(1\times 10^{-6}\)</span> )</li>
+</ol>
+</section>
+</section>
+</section>
+</section>
+
+</main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>
